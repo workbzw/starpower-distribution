@@ -2,7 +2,7 @@
   "crons": [
     {
       "path": "/api/rank",
-      "schedule": "* * * */1 *"
+      "schedule": "0 35 2 * * ?"
     }
   ]
 }
