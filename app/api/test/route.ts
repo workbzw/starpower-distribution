@@ -14,5 +14,5 @@ export async function GET() {
     if (!t) {
         return Response.json({code: 401, msg: "",data: ""});
     }
-    return Response.json({code: 200, msg: "", data: {data:t}})
+    return Response.json({code: 200, msg: "", data: {data:t}});
 }
