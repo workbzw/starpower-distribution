@@ -32,10 +32,15 @@ async function req(limit: number, sinceId?: number) {
     const instance = axios.create({
         baseURL: 'https://starpower-market.myshopify.com',
         headers: {
-            'X-Shopify-Access-Token': process.env.SHOPIFY_TOKEN!,
+            'X-Shopify-Access-Token': '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',
+            // 'X-Shopify-Access-Token': process.env.SHOPIFY_TOKEN!.toString(),
         }
     });
-    const res = await instance.get("/admin/api/2024-01/orders.json?financial_status=paid&limit="+limit+"&since_id="+sinceId);
+    let sinceIdStr = "";
+    if (sinceId) {
+        sinceIdStr = "&since_id=" + sinceId;
+    }
+    const res = await instance.get("/admin/api/2024-01/orders.json?financial_status=paid&limit=" + limit + sinceIdStr);
     for (let i = 0; i < res.data.orders.length; i++) {
         console.log(res.data.orders[i].billing_address.address2 + ":" + res.data.orders[i].financial_status);
         // console.log(res.data.orders[i]);
