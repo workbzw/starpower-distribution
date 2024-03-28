@@ -32,7 +32,7 @@ async function req(limit: number, sinceId?: number) {
     const instance = axios.create({
         baseURL: 'https://starpower-market.myshopify.com',
         headers: {
-            'X-Shopify-Access-Token': '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',
+            'X-Shopify-Access-Token': process.env.SHOPIFY_TOKEN!,
         }
     });
     const res = await instance.get("/admin/api/2024-01/orders.json?financial_status=paid&limit="+limit+"&since_id="+sinceId);
