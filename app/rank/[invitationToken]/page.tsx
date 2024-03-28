@@ -1,6 +1,7 @@
 // 'use client';
 import BuyButton from "@/components/BuyButton";
 import {ApiVersion, shopifyApi} from '@shopify/shopify-api';
+import axios from "axios";
 
 export default async function HomePage({params: {invitationToken}}: { params: { invitationToken: string } }) {
 
