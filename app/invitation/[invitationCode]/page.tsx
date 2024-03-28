@@ -17,6 +17,7 @@ export default async function HomePage({params: {invitationCode}}: { params: { i
                 <video style={{width: "100%", height: "auto", marginTop: "-36%", marginBottom: "-43%"}} muted autoPlay
                        loop={false}
                        playsInline
+                       poster={"https://s1.imagehub.cc/images/2024/03/28/d946028692e62da088d8ab061e7e099f.png"}
                        src={"https://www.starpower.world/static/media/H1_black.2f6a05d9.m4v"}></video>
             </div>
 
