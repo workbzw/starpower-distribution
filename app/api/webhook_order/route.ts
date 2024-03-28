@@ -2,9 +2,11 @@ import '@shopify/shopify-api/adapters/node';
 import axios from "axios";
 import {createClient} from "@/utils/supabase/server";
 
-export async function POST({data}: { data: any }) {
+export async function POST(req: Request) {
     const supabase = createClient();
-    console.log("receive data:" + JSON.stringify(data));
+    const res = await req.json();
+    console.log("receive req.body:" + JSON.stringify(req.body));
+    await supabase.from("rank").insert({order_id: JSON.parse(res).id, order_name: JSON.parse(res).name});
     return Response.json({code: 200, msg: "", data: {}});
 }
 
