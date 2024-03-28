@@ -1,8 +1,8 @@
 // 'use client';
 import BuyButton from "@/components/BuyButton";
 
-
 export default async function HomePage({params: {invitationCode}}: { params: { invitationCode: string } }) {
+
     return (
         <div className="flex-1 w-full flex flex-col gap-20 items-center bg-black">
             <div className="w-full fixed">
@@ -21,14 +21,11 @@ export default async function HomePage({params: {invitationCode}}: { params: { i
             </div>
 
             <div className="w-full max-w-4xl flex justify-center items-center p-3 text-sm">
-                <BuyButton/>
+                <BuyButton invitationCode={invitationCode} />
             </div>
-
-            <div className="text-white">{invitationCode}</div>
             <footer
-                className="w-full border-t border-white border-t-foreground/10 p-8 flex justify-center text-center text-xs text-white">
-                <p>
-                    Powered by{" "}
+                className="w-full border-t border-white border-t-foreground/10 text-center text-xs text-white">
+                <div className="absolute w-full text-center">Powered by{" "}
                     <a
                         href="https://www.starpower.world"
                         target="_blank"
@@ -37,7 +34,7 @@ export default async function HomePage({params: {invitationCode}}: { params: { i
                     >
                         STARPOWER
                     </a>
-                </p>
+                </div>
             </footer>
         </div>
     );

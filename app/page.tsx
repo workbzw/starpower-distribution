@@ -4,6 +4,7 @@ import {createClient} from "@/utils/supabase/server";
 import ConnectSupabaseSteps from "@/components/tutorial/ConnectSupabaseSteps";
 import SignUpUserSteps from "@/components/tutorial/SignUpUserSteps";
 import Header from "@/components/Header";
+import {redirect} from "next/navigation";
 
 export default async function Index() {
     const canInitSupabaseClient = () => {
@@ -18,7 +19,6 @@ export default async function Index() {
     };
 
     const isSupabaseConnected = canInitSupabaseClient();
-
     return (
         <div className="flex-1 w-full flex flex-col gap-20 items-center">
             <footer className="w-full border-t border-t-foreground/10 p-8 flex justify-center text-center text-xs">

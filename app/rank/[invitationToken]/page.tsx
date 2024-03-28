@@ -1,8 +1,9 @@
 // 'use client';
 import BuyButton from "@/components/BuyButton";
-
+import {ApiVersion, shopifyApi} from '@shopify/shopify-api';
 
 export default async function HomePage({params: {invitationToken}}: { params: { invitationToken: string } }) {
+
     return (
         <div className="flex-1 w-full flex flex-col gap-20 items-center bg-black">
             <div className="w-full fixed">
