@@ -1,8 +1,7 @@
 // 'use client';
 import BuyButton from "@/components/BuyButton";
-import {ApiVersion, shopifyApi} from '@shopify/shopify-api';
 
-export default async function HomePage({params: {invitationToken}}: { params: { invitationToken: string } }) {
+export default async function HomePage({params: {invitationCode}}: { params: { invitationCode: string } }) {
 
     return (
         <div className="flex-1 w-full flex flex-col gap-20 items-center bg-black">
@@ -18,18 +17,16 @@ export default async function HomePage({params: {invitationToken}}: { params: { 
                 <video style={{width: "100%", height: "auto", marginTop: "-36%", marginBottom: "-43%"}} muted autoPlay
                        loop={false}
                        playsInline
+                       poster={"https://s1.imagehub.cc/images/2024/03/28/d946028692e62da088d8ab061e7e099f.png"}
                        src={"https://www.starpower.world/static/media/H1_black.2f6a05d9.m4v"}></video>
             </div>
 
             <div className="w-full max-w-4xl flex justify-center items-center p-3 text-sm">
-                <BuyButton invitationCode={"1"}/>
+                <BuyButton invitationCode={invitationCode} />
             </div>
-
-            <div className="text-white">{invitationToken}</div>
             <footer
-                className="w-full border-t border-white border-t-foreground/10 p-8 flex justify-center text-center text-xs text-white">
-                <p>
-                    Powered by{" "}
+                className="w-full border-t border-white border-t-foreground/10 text-center text-xs text-white">
+                <div className="absolute w-full text-center">Powered by{" "}
                     <a
                         href="https://www.starpower.world"
                         target="_blank"
@@ -38,7 +35,7 @@ export default async function HomePage({params: {invitationToken}}: { params: { 
                     >
                         STARPOWER
                     </a>
-                </p>
+                </div>
             </footer>
         </div>
     );
