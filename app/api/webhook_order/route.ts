@@ -5,9 +5,22 @@ import {createClient} from "@/utils/supabase/server";
 export async function POST(req: Request) {
     try {
         const supabase = createClient();
-        const res = await req.json();
-        console.log("receive req.body:" + res);
-        await supabase.from("rank").insert({order_id: res.id, order_name: res.name});
+        const order = await req.json();
+        console.log("receive order.body:" + order.toString());
+        await supabase.from("rank").insert({
+            order_id: order.id,
+            order_name: order.name,
+            order_created_at: order.customer.created_at ?? "",
+            invitation_code: order.billing_address.address2 ?? "",
+            country_code: order.billing_address.country_code ?? "",
+            province_code: order.billing_address.province_code ?? "",
+            email: order.customer.email ?? "",
+            first_name: order.customer.first_name ?? "",
+            last_name: order.customer.last_name ?? "",
+            phone: order.customer.phone ?? "",
+            goods_num: order.line_items.goods_num ?? 0,
+            order_status_url: order.order_status_url ?? ""
+        });
     } catch (e) {
         return Response.json({code: 200, msg: "error", data: {error: e}});
     }
