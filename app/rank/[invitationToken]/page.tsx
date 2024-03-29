@@ -48,7 +48,8 @@ export default function HomePage({params: {invitationToken}}: { params: { invita
                     </div>
                 </div>
                 <Container sx={{mt: 4, mb: 4, width: '100%'}}>
-                    <Grid container spacing={2}>
+                    <Typography sx={{color:'white'}}>Your</Typography>
+                    <Grid container spacing={4}>
                         <Grid item xs={12}>
                             <Paper sx={{p: 0, display: 'flex', flexDirection: 'column'}}>
                                 <Orders/>
