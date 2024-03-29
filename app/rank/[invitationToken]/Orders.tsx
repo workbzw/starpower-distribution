@@ -6,6 +6,8 @@ import TableCell from '@mui/material/TableCell';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Title from './Title';
+import {SpaceBar} from "@mui/icons-material";
+import {Space_Mono} from "next/dist/compiled/@next/font/dist/google";
 
 // Generate Order Data
 function createData(
@@ -26,7 +28,7 @@ const rows = [
         'Elvis Presley',
         'Tupelo, MS',
         'VISA ⠀•••• 3719',
-        312.44,
+        2,
     ),
     createData(
         1,
@@ -34,16 +36,16 @@ const rows = [
         'Paul McCartney',
         'London, UK',
         'VISA ⠀•••• 2574',
-        866.99,
+        1,
     ),
-    createData(2, '16 Mar, 2019', 'Tom Scholz', 'Boston, MA', 'MC ⠀•••• 1253', 100.81),
+    createData(2, '16 Mar, 2019', 'Tom Scholz', 'Boston, MA', 'MC ⠀•••• 1253', 2),
     createData(
         3,
         '16 Mar, 2019',
         'Michael Jackson',
         'Gary, IN',
         'AMEX ⠀•••• 2000',
-        654.39,
+        6,
     ),
     createData(
         4,
@@ -51,14 +53,14 @@ const rows = [
         'Bruce Springsteen',
         'Long Branch, NJ',
         'VISA ⠀•••• 5919',
-        212.79,
+        2,
     ),createData(
         0,
         '16 Mar, 2019',
         'Elvis Presley',
         'Tupelo, MS',
         'VISA ⠀•••• 3719',
-        312.44,
+        3,
     ),
     createData(
         1,
@@ -66,16 +68,16 @@ const rows = [
         'Paul McCartney',
         'London, UK',
         'VISA ⠀•••• 2574',
-        866.99,
+        8,
     ),
-    createData(2, '16 Mar, 2019', 'Tom Scholz', 'Boston, MA', 'MC ⠀•••• 1253', 100.81),
+    createData(2, '16 Mar, 2019', 'Tom Scholz', 'Boston, MA', 'MC ⠀•••• 1253', 2),
     createData(
         3,
         '16 Mar, 2019',
         'Michael Jackson',
         'Gary, IN',
         'AMEX ⠀•••• 2000',
-        654.39,
+        6,
     ),
     createData(
         4,
@@ -83,14 +85,14 @@ const rows = [
         'Bruce Springsteen',
         'Long Branch, NJ',
         'VISA ⠀•••• 5919',
-        212.79,
+        2,
     ),createData(
         0,
         '16 Mar, 2019',
         'Elvis Presley',
         'Tupelo, MS',
         'VISA ⠀•••• 3719',
-        312.44,
+        5,
     ),
     createData(
         1,
@@ -98,16 +100,16 @@ const rows = [
         'Paul McCartney',
         'London, UK',
         'VISA ⠀•••• 2574',
-        866.99,
+        1,
     ),
-    createData(2, '16 Mar, 2019', 'Tom Scholz', 'Boston, MA', 'MC ⠀•••• 1253', 100.81),
+    createData(2, '16 Mar, 2019', 'Tom Scholz', 'Boston, MA', 'MC ⠀•••• 1253', 2),
     createData(
         3,
         '16 Mar, 2019',
         'Michael Jackson',
         'Gary, IN',
         'AMEX ⠀•••• 2000',
-        654.39,
+        1,
     ),
     createData(
         4,
@@ -115,14 +117,14 @@ const rows = [
         'Bruce Springsteen',
         'Long Branch, NJ',
         'VISA ⠀•••• 5919',
-        212.79,
+        2,
     ),createData(
         0,
         '16 Mar, 2019',
         'Elvis Presley',
         'Tupelo, MS',
         'VISA ⠀•••• 3719',
-        312.44,
+        3,
     ),
     createData(
         1,
@@ -130,16 +132,16 @@ const rows = [
         'Paul McCartney',
         'London, UK',
         'VISA ⠀•••• 2574',
-        866.99,
+        866,
     ),
-    createData(2, '16 Mar, 2019', 'Tom Scholz', 'Boston, MA', 'MC ⠀•••• 1253', 100.81),
+    createData(2, '16 Mar, 2019', 'Tom Scholz', 'Boston, MA', 'MC ⠀•••• 1253', 2),
     createData(
         3,
         '16 Mar, 2019',
         'Michael Jackson',
         'Gary, IN',
         'AMEX ⠀•••• 2000',
-        654.39,
+        65,
     ),
     createData(
         4,
@@ -147,14 +149,14 @@ const rows = [
         'Bruce Springsteen',
         'Long Branch, NJ',
         'VISA ⠀•••• 5919',
-        212.79,
+        2,
     ),createData(
         0,
         '16 Mar, 2019',
         'Elvis Presley',
         'Tupelo, MS',
         'VISA ⠀•••• 3719',
-        312.44,
+        3,
     ),
     createData(
         1,
@@ -162,16 +164,16 @@ const rows = [
         'Paul McCartney',
         'London, UK',
         'VISA ⠀•••• 2574',
-        866.99,
+        1,
     ),
-    createData(2, '16 Mar, 2019', 'Tom Scholz', 'Boston, MA', 'MC ⠀•••• 1253', 100.81),
+    createData(2, '16 Mar, 2019', 'Tom Scholz', 'Boston, MA', 'MC ⠀•••• 1253', 2),
     createData(
         3,
         '16 Mar, 2019',
         'Michael Jackson',
         'Gary, IN',
         'AMEX ⠀•••• 2000',
-        654.39,
+        6,
     ),
     createData(
         4,
@@ -179,7 +181,7 @@ const rows = [
         'Bruce Springsteen',
         'Long Branch, NJ',
         'VISA ⠀•••• 5919',
-        212.79,
+        2,
     ),
 ];
 
@@ -190,7 +192,8 @@ function preventDefault(event: React.MouseEvent) {
 export default function Orders() {
     return (
         <React.Fragment>
-            <Title>Recent Orders</Title>
+            <div className="h-10"/>
+            <Title>Your Orders</Title>
             <Table size="small">
                 <TableHead>
                     <TableRow>
@@ -198,7 +201,7 @@ export default function Orders() {
                         <TableCell>Name</TableCell>
                         <TableCell>Ship To</TableCell>
                         <TableCell>Payment Method</TableCell>
-                        <TableCell align="right">Sale Amount</TableCell>
+                        <TableCell align="right">Sale Quantity</TableCell>
                     </TableRow>
                 </TableHead>
                 <TableBody>
@@ -208,7 +211,7 @@ export default function Orders() {
                             <TableCell>{row.name}</TableCell>
                             <TableCell>{row.shipTo}</TableCell>
                             <TableCell>{row.paymentMethod}</TableCell>
-                            <TableCell align="right">{`$${row.amount}`}</TableCell>
+                            <TableCell align="right">{`${row.amount}`}</TableCell>
                         </TableRow>
                     ))}
                 </TableBody>
