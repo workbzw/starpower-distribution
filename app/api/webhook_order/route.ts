@@ -3,12 +3,17 @@ import axios from "axios";
 import {createClient} from "@/utils/supabase/server";
 
 export async function POST(req: Request) {
-    return Response.json({code: 200, msg: "", data: {}});
-    // const supabase = createClient();
-    // const res = await req.json();
-    // console.log("receive req.body:" + JSON.stringify(req.body));
-    // await supabase.from("rank").insert({order_id: JSON.parse(res).id, order_name: JSON.parse(res).name});
+    try {
+        const supabase = createClient();
+        const res = await req.json();
+        console.log("receive req.body:" + res);
+        await supabase.from("rank").insert({order_id: res.id, order_name: res.name});
+    } catch (e) {
+        return Response.json({code: 200, msg: "error", data: {error: e}});
+    }
+    return Response.json({code: 200, msg: "success", data: {}});
 }
+
 // https://starpower-distribution.vercel.app/api/webhook_order
 
 // curl -d '{"webhook":{"address":"https://starpower-distribution.vercel.app/api/webhook_order","topic":"orders/paid","format":"json"}}' \
