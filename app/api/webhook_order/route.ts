@@ -18,7 +18,7 @@ export async function POST(req: Request) {
             first_name: order.customer.first_name ?? "",
             last_name: order.customer.last_name ?? "",
             phone: order.customer.phone ?? "",
-            goods_num: order.line_items[0].goods_num ?? 0,
+            goods_num: order.line_items[0].quantity ?? 0,
             order_status_url: order.order_status_url ?? ""
         });
     } catch (e) {
