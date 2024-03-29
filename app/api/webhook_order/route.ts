@@ -9,7 +9,15 @@ export async function POST(req: Request) {
     await supabase.from("rank").insert({order_id: JSON.parse(res).id, order_name: JSON.parse(res).name});
     return Response.json({code: 200, msg: "", data: {}});
 }
+// https://starpower-distribution.vercel.app/api/webhook_order
 
+// curl -d '{"webhook":{"address":"https://starpower-distribution.vercel.app/api/webhook_order","topic":"orders/paid","format":"json"}}' \
+// -X POST "https://starpower-market.myshopify.com/admin/api/2024-01/webhooks.json" \
+// -H "X-Shopify-Access-Token: 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" \
+// -H "Content-Type: application/json"
+
+// curl -X GET "https://starpower-market.myshopify.com/admin/api/2024-01/webhooks.json" \
+// -H "X-Shopify-Access-Token: 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"
 interface RankItem {
     order_id: number;
     order_created_at: string;
