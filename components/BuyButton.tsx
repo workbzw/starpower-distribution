@@ -3,7 +3,7 @@ export default function BuyButton({invitationCode}:{invitationCode:string}) {
     const handleClick = () => {
         if (typeof window !== 'undefined') {
             navigator.clipboard.writeText(invitationCode).then(r => console.log("copy success")).catch((reason)=>{console.log(reason.toString())})
-            window.open('https://baidu.com') //这里是打开新窗口
+            window.open('https://www.starpower.world') //这里是打开新窗口
         }
     }
     return (

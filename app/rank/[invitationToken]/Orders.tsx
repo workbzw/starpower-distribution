@@ -5,6 +5,8 @@ import TableCell from '@mui/material/TableCell';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Title from './Title';
+import axios from "axios";
+import {useEffect, useState} from "react";
 
 // Generate Order Data
 function createData(
@@ -182,7 +184,18 @@ const rows = [
     ),
 ];
 
-export default async function Orders() {
+export default function Orders({rankToken}) {
+
+    const [orders, setOrders] = useState<RankItem[]>([]);
+
+    useEffect(() => {
+        axios.get("/api/rank/" + rankToken).catch((e) => {
+            console.log(e)
+        }).then((res: any) => {
+            console.log(res.data.data.data);
+            setOrders(res.data.data.data);
+        });
+    }, []);
 
     return (
         <React.Fragment>
@@ -192,20 +205,20 @@ export default async function Orders() {
                 <TableHead>
                     <TableRow>
                         <TableCell>Date</TableCell>
-                        <TableCell>Name</TableCell>
+                        <TableCell>Order</TableCell>
+                        <TableCell>User Name</TableCell>
                         <TableCell>Ship To</TableCell>
-                        <TableCell>Payment Method</TableCell>
                         <TableCell align="right">Sale Quantity</TableCell>
                     </TableRow>
                 </TableHead>
                 <TableBody>
-                    {rows.map((row) => (
-                        <TableRow key={row.id}>
-                            <TableCell>{row.date}</TableCell>
-                            <TableCell>{row.name}</TableCell>
-                            <TableCell>{row.shipTo}</TableCell>
-                            <TableCell>{row.paymentMethod}</TableCell>
-                            <TableCell align="right">{`${row.amount}`}</TableCell>
+                    {orders.map((row) => (
+                        <TableRow key={row.order_id}>
+                            <TableCell>{row.order_created_at}</TableCell>
+                            <TableCell>{row.order_name}</TableCell>
+                            <TableCell>{row.first_name + " " + row.last_name}</TableCell>
+                            <TableCell>{row.province_code + "," + row.country_code}</TableCell>
+                            <TableCell align="right">{`${row.goods_num}`}</TableCell>
                         </TableRow>
                     ))}
                 </TableBody>
@@ -215,4 +228,19 @@ export default async function Orders() {
             {/*</Link>*/}
         </React.Fragment>
     );
+}
+
+interface RankItem {
+    order_id: number;
+    order_created_at: string;
+    invitation_code: string;
+    country_code: string;
+    province_code: string;
+    email: string;
+    first_name: string;
+    last_name: string;
+    phone: string;
+    goods_num: number;
+    order_status_url: string;
+    order_name: string;
 }
