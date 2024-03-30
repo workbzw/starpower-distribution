@@ -18,6 +18,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={GeistSans.className}>
+    <head>
+      {/* <link rel="shortcut icon" href={favicon} /> */}
+      <link rel="shortcut icon" href="./favicon.ico" />
+    </head>
       <body className="bg-background text-foreground">
         <main className="min-h-screen flex flex-col items-center">
           {children}
