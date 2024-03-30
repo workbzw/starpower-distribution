@@ -184,12 +184,12 @@ const rows = [
     ),
 ];
 
-export default function Orders({params:{rankToken}}) {
+export default function Orders(props) {
 
     const [orders, setOrders] = useState<RankItem[]>([]);
 
     useEffect(() => {
-        axios.get("/api/rank/" + rankToken).catch((e) => {
+        axios.get("/api/rank/" + props.rankToken).catch((e) => {
             console.log(e)
         }).then((res: any) => {
             console.log(res.data.data.data);
