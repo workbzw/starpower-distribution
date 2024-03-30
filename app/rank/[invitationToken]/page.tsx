@@ -51,7 +51,7 @@ export default function HomePage({params: {invitationToken}}: { params: { invita
                     <Grid container spacing={4}>
                         <Grid item xs={12}>
                             <Paper sx={{p: 0, display: 'flex', flexDirection: 'column'}}>
-                                <Orders rankToken={invitationToken}/>
+                                <Orders rankToken={invitationToken} />
                             </Paper>
                         </Grid>
                     </Grid>
