@@ -1,9 +1,9 @@
 import '@shopify/shopify-api/adapters/node';
 import {createClient} from "@/utils/supabase/server";
 
-export async function GET({params: {invitationToken}}: { params: { invitationToken: string } }) {
+export async function GET(req: Request) {
     const supabase = createClient();
-
+    const invitationToken = req.url.slice(req.url.lastIndexOf('/') + 1)
     const ambassador = await supabase.from('ambassador').select('*').eq("rank_token", invitationToken)
     if (ambassador && ambassador[0]) {
         const res = await supabase.from('rank').select('*').eq("invitation_code", ambassador[0].invitation_code)
