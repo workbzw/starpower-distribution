@@ -24,7 +24,6 @@ function Copyright(props: any) {
 
 const defaultTheme = createTheme({palette: {mode: 'dark'}});
 export default function HomePage({params: {invitationToken}}: { params: { invitationToken: string } }) {
-
     return (
         <ThemeProvider theme={defaultTheme}>
             <Box
@@ -48,7 +47,7 @@ export default function HomePage({params: {invitationToken}}: { params: { invita
                     </div>
                 </div>
                 <Container sx={{mt: 4, mb: 4, width: '100%'}}>
-                    <Typography sx={{color:'white'}}>Your</Typography>
+                    <Typography sx={{color: 'white'}}>Your</Typography>
                     <Grid container spacing={4}>
                         <Grid item xs={12}>
                             <Paper sx={{p: 0, display: 'flex', flexDirection: 'column'}}>

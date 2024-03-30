@@ -3,7 +3,7 @@ import axios from "axios";
 import {createClient} from "@/utils/supabase/server";
 
 export async function GET() {
-    const supabase = createClient();
+    // const supabase = createClient();
     await axios.post("https://starpower-market.myshopify.com/admin/api/2024-01/webhooks.json", {
         webhook: {
             address: "https://starpower-distribution.vercel.app/api/webhook_order",

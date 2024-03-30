@@ -1,13 +1,10 @@
 import * as React from 'react';
-import Link from '@mui/material/Link';
 import Table from '@mui/material/Table';
 import TableBody from '@mui/material/TableBody';
 import TableCell from '@mui/material/TableCell';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Title from './Title';
-import {SpaceBar} from "@mui/icons-material";
-import {Space_Mono} from "next/dist/compiled/@next/font/dist/google";
 
 // Generate Order Data
 function createData(
@@ -18,7 +15,7 @@ function createData(
     paymentMethod: string,
     amount: number,
 ) {
-    return { id, date, name, shipTo, paymentMethod, amount };
+    return {id, date, name, shipTo, paymentMethod, amount};
 }
 
 const rows = [
@@ -54,7 +51,7 @@ const rows = [
         'Long Branch, NJ',
         'VISA ⠀•••• 5919',
         2,
-    ),createData(
+    ), createData(
         0,
         '16 Mar, 2019',
         'Elvis Presley',
@@ -86,7 +83,7 @@ const rows = [
         'Long Branch, NJ',
         'VISA ⠀•••• 5919',
         2,
-    ),createData(
+    ), createData(
         0,
         '16 Mar, 2019',
         'Elvis Presley',
@@ -118,7 +115,7 @@ const rows = [
         'Long Branch, NJ',
         'VISA ⠀•••• 5919',
         2,
-    ),createData(
+    ), createData(
         0,
         '16 Mar, 2019',
         'Elvis Presley',
@@ -150,7 +147,7 @@ const rows = [
         'Long Branch, NJ',
         'VISA ⠀•••• 5919',
         2,
-    ),createData(
+    ), createData(
         0,
         '16 Mar, 2019',
         'Elvis Presley',
@@ -185,11 +182,8 @@ const rows = [
     ),
 ];
 
-function preventDefault(event: React.MouseEvent) {
-    event.preventDefault();
-}
+export default async function Orders() {
 
-export default function Orders() {
     return (
         <React.Fragment>
             <div className="h-10"/>
