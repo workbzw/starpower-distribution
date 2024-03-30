@@ -184,7 +184,7 @@ const rows = [
     ),
 ];
 
-export default function Orders({rankToken}) {
+export default function Orders({params:{rankToken}}) {
 
     const [orders, setOrders] = useState<RankItem[]>([]);
 
