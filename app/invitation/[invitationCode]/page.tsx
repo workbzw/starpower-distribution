@@ -20,12 +20,13 @@ export default async function HomePage({params: {invitationCode}}: { params: { i
                        poster={"https://s1.imagehub.cc/images/2024/03/28/d946028692e62da088d8ab061e7e099f.png"}
                        src={"https://www.starpower.world/static/media/H1_black.2f6a05d9.m4v"}></video>
             </div>
-
-            <div className="w-full max-w-4xl flex justify-center items-center p-3 text-sm">
-                <BuyButton invitationCode={invitationCode} />
+            <div className="w-full max-w-4xl flex justify-center items-center p-0 text-sm">
+                <BuyButton invitationCode={invitationCode}/>
             </div>
+            {/*<img src={'https://pic.superbed.cc/item/660a52b6f989f2fb97838e28.png'}/>*/}
+            {/*<img src={'https://pic.superbed.cc/item/660a52c3f989f2fb97838e9e.png'}/>*/}
             <footer
-                className="w-full border-t border-white border-t-foreground/10 text-center text-xs text-white">
+                className="h-10 w-full border-t border-white border-t-foreground/10 text-center text-xs text-white ">
                 <div className="absolute w-full text-center">Powered by{" "}
                     <a
                         href="https://www.starpower.world"
