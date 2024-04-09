@@ -54,7 +54,7 @@ export default function BuyButton({invitationCode}: { invitationCode: string }) 
             navigator.clipboard.writeText(invitationCode).then(r => console.log("copy success")).catch((reason) => {
                 console.log(reason.toString())
             })
-            window.open('https://www.starpower.world') //这里是打开新窗口
+            window.open('https://www.starpower.world/preorder?pre=1711372176574') //这里是打开新窗口
         }
     };
     // {/*{`Copy Referral Code:${invitationCode} And Buy Now ➔`}*/}
@@ -89,7 +89,7 @@ export default function BuyButton({invitationCode}: { invitationCode: string }) 
                     </Box>
                     <Box sx={{display: showTip ? 'block' : 'none'}}>
                         <Typography color={'error'}>
-                            Copy referral code success! Please file the referral code into the input box in order form.
+                            Copy referral code success! Please fill the referral code into the input box in order form.
                         </Typography>
                         <img src={'https://pic.superbed.cc/item/660a52c3f989f2fb97838e9e.png'}/>
                     </Box>
